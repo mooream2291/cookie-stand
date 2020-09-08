@@ -10,9 +10,6 @@ var seattle = {
     totalsales: [],
    random:function() {
        for (var i = 0; i < storehours.length; i++);
-       var li = document.createElement('li');
-       li.textcontent = hours[i] + ': ' + Math.round(generaterandom(this.min, this.max)*this.avgck) + ' cookies';
-       storeinfo.appendChild(li); 
        var cph = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
        var cookiesales = Math.round(cph*this.avgck);
        return cookiesales
@@ -21,8 +18,21 @@ var seattle = {
        for (var i = 0; i < storehours.length; i++) {
            this.totalsales.push(this.random())
        }
-   }
+       this.renderStore();
+   },
+    renderStore:function() {
+        var root = document.getElementById('root');
+        var list =  document.createElement ('ul');
+            for (var i = 0; i < this.totalsales.length; i++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = `${storehours[i]}: ${this.totalsales[i]}`;
+        list.append(listItem);
+    }
+    root.append(list);
+    }
 }
+seattle.generateTotal();
+
 var tokyo = {
     name: 'Tokyo',
     min: 3,
