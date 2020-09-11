@@ -6,9 +6,32 @@
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
-    <div id= "root">
+    <div>
         <table id="cookietable"></table>
-
+    <form id='formNewStore'>
+        <fieldset>
+          <legend>New Store</legend>
+          <label for="formName">
+            City Name
+          </label>
+          <input name="formName" id="formName" type="text">
+          <label for="formMin">
+            Min Customers Per Hour
+        </label>
+        <input name="formMin" id="formMin" type="text">
+          <label for="formMax">
+            Max Customers Per Hour
+        </label>
+        <input name="formMax" id="formMax" type="text">
+          <label for="formAvgck">
+            Avg Cookies Per Customer
+        </label>
+        <input name="formAvgck" id="formAvgck" type="text">
+          <button>
+            Submit
+          </button>
+        </fieldset>
+      </form>
 
   </div>  
 </body>
